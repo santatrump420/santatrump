@@ -1,3 +1,30 @@
+    // Wait for the DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get the audio element after the DOM is fully loaded
+      const audio = document.getElementById('audioElement');
+      
+      if (!audio) {
+        console.error("Audio element not found!");
+        return;
+      }
+
+      let hasPlayed = false; // To make sure the audio plays only once after scrolling
+
+      // Listen for scroll events
+      window.addEventListener('scroll', function() {
+          // Play the audio when the user scrolls down
+          if (!hasPlayed && window.scrollY > 100) { // Trigger audio after 100px of scroll
+              audio.play().then(() => {
+                  console.log('Audio is playing');
+                  hasPlayed = true; // Prevent audio from playing multiple times
+              }).catch((error) => {
+                  console.error('Error playing audio:', error);
+              });
+          }
+      });
+    });
+
+
 initSnowify();
 
 function copyToClipboard() {

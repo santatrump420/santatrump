@@ -80,6 +80,7 @@
       .top-section {
         position: relative;
         overflow: hidden; /* Hide any overflowing image parts */
+        padding-top: 70px;
       }
       
       /* Make the image responsive */
