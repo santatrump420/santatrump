@@ -1,0 +1,313 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .nav-link {
+    margin-right: 30px;
+    transition: transform 0.2s ease, color 0.2s ease; /* Add transition for smooth scaling and color change */
+}
+
+.navbar .nav-link:hover {
+    transform: scale(0.8); /* Shrinks the link to 80% of its original size */
+}
+
+.nav-link-last {
+    margin-right: 0!important;
+}
+
+/* Navbar brand (logo and text) styling */
+.navbar-brand {
+    display: flex; /* Align the logo and text horizontally */
+    align-items: center; /* Vertically align the items (logo and text) */
+    justify-content: center; /* Center the items horizontally */
+}
+
+.navbar-brand img {
+    height: 50px; /* Adjust logo size */
+}
+
+.navbar-brand span {
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #000;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+/* Responsive Styles for Small Screens */
+@media (max-width: 591px) {
+    /* Ensure the logo and name stay side by side and centered */
+    .navbar-brand {
+        flex-direction: row; /* Ensure the logo and name are side by side */
+        align-items: center; /* Keep them vertically centered */
+        justify-content: center; /* Center both the logo and the text horizontally */
+        width: 100%; /* Make sure it takes the full width for centering */
+    }
+
+    .navbar-brand img {
+        height: 50px; /* Ensure the logo size remains consistent */
+    }
+
+    .navbar-brand span {
+        font-size: 1rem; /* Adjust font size for the logo name */
+        margin-left: 10px; /* Space between logo image and name */
+    }
+
+    /* Adjust the icon container for small screens */
+    .d-flex {
+        justify-content: space-evenly; /* Space out the icons evenly across the width */
+        width: 100%; /* Ensure the container takes full width */
+        flex-wrap: wrap; /* Allow icons to wrap if needed */
+        margin-bottom:10px;
+    }
+
+    /* Adjust the size of the icons */
+    .d-flex .nav-link img {
+        width: 25px; /* Make the icons slightly smaller */
+        height: 25px; /* Keep icons square */
+    }
+
+    .d-flex .nav-link {
+        margin-right: 15px; /* Adjust margin for spacing between icons */
+    }
+}
+  
+      /* Full screen image */
+      .top-section {
+        position: relative;
+        overflow: hidden; /* Hide any overflowing image parts */
+      }
+      
+      /* Make the image responsive */
+      .top-section img {
+        width: 100%; /* Ensure the image fills the width of the section */
+        height: auto; /* Maintain the aspect ratio */
+        object-fit: cover; /* Prevent distortion if needed */
+      }
+  
+      /* About Section */
+      .about-section {
+        background-image: url('images/about_bg.png'); /* Replace with your image */
+        background-attachment: fixed;
+        background-size: cover;
+        padding: 50px 0;
+      }
+
+      .section-header {
+        text-align: center;
+        color: #fff;
+        text-transform: uppercase;
+        text-shadow: 0 3px #000;
+        font-size: 70px;
+        font-weight: 400;
+        line-height: 100%;
+        margin-bottom: 65px;
+      }
+  
+      .about-content {
+        display: flex;
+        align-items: center;
+      }
+  
+      .about-image {
+        flex: 1;
+        max-width: 50%;
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center horizontally */
+        justify-content: center; /* Center vertically */
+        text-align: center; /* Ensure text is also centered */
+      }
+
+      .about-image img {
+        max-width: 80%;
+        height: auto;
+      }
+
+      .about-token-name {
+        color: #fff;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #000;
+        text-transform: uppercase;
+        text-shadow: 0 6px #000;
+        font-size: 90px;
+        font-weight: 400;
+        line-height: 100%;
+        transform: rotate(-3deg);
+        font-family: Slackey, Impact, sans-serif;
+        margin: 40px 0 30px;
+      }
+  
+      .about-text-boxes {
+        flex: 1;
+        padding-left: 30px;
+      }
+  
+      .about-text-boxes .box {
+        border-radius: 10px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 2); /* Soft shadow */
+        margin-bottom:25px;
+      }
+
+      @media (max-width: 767px) {
+        .about-content, 
+        .tokenomics-content,
+        .info-container{
+          /* justify-content: center; Center the content on small screens */
+          flex-direction: column;
+        }
+      
+        .about-image,
+        .about-text-boxes,
+        .tokenomics-left,
+        .tokenomics-right {
+          flex: 0 0 100%;
+          max-width: 100%; /* Full width on small screens */
+          width: 100%;
+        }
+      
+        .about-image {
+          margin-bottom: 20px; /* Add some space between the image and the text boxes */
+        }
+      
+        .about-text-boxes {
+          padding-left: 0; /* Remove padding for smaller screens */
+          text-align: center; /* Center the text boxes */
+        }
+
+        .info-container{
+            justify-content: space-between;
+            gap: 20px; /* Add space between the items when in row direction */
+          }
+      }
+
+      @media (max-width: 500px) {
+        .section-header {
+            font-size: 54px;
+          }
+      }
+  
+      /* Tokenomics Section */
+      .tokenomics-section {
+        background-color: #f1f1f1;
+        padding: 50px 0;
+      }
+
+      .tokenomics-section .section-header {
+        color:#222;
+      }
+
+      .tokenomics-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        flex-wrap: wrap; /* Ensures proper stacking on smaller screens */
+      }
+
+      .info {
+        background-color: white;
+        width: 100%;
+        margin: 20px 0;
+        padding: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 2);
+      }
+
+      .info-top-block {
+        background-color: #B71C1C;
+        height: 30px;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .info-container {
+        display: flex;
+      }
+
+      .info-box {
+        flex: 1;
+        text-align: center;
+      }
+  
+      .tokenomics-left {
+        width:100%;
+        place-items: center;
+      }
+
+      .tokenomics-left .box {
+        border-radius: 10px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 2); /* Soft shadow */
+        margin-bottom:25px;
+        text-align: center; /* Center headers and text */
+        width: 100%;
+      }
+
+      .tokenomics-left .box h3 {
+        margin-bottom: 15px; /* Space below the header */
+        font-size: 1.5rem; /* Adjust font size if needed */
+      }
+
+      .tokenomics-left .copy-text {
+        word-wrap: break-word; /* Allows long text to wrap */
+        overflow-wrap: break-word; /* Ensures compatibility */
+        margin: 0; /* Remove default margin */
+        cursor: pointer;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+  
+      .tokenomics-right {
+        width:100%;
+        align-items: center;
+      }
+  
+      .footer {
+        background-color: #222;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      .tokenomics-right .btn {
+        font-size: 2rem; /* Increases the text size */
+        padding: 20px 40px; /* Makes the button larger */
+        border-radius: 10px; /* Smooth corners */
+        background-color: #007bff; /* Primary button color */
+        color: white; /* Text color */
+        border: none; /* Remove default border */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+        transition: transform 0.2s, background-color 0.2s; /* Smooth hover effect */
+        width: 100%; /* Ensure the button stretches to full width */
+      }
+      
+      .tokenomics-right .btn:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: scale(1.1); /* Slightly enlarges on hover */
+      }
+
+      /* Popup */
+      .popup {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
